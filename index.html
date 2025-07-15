@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'Fallon Auto Repair Directory - Compare All 17+ Car Repair Shops</title>
+    <meta name="description" content="Find the best auto repair shop in O'Fallon, IL. Compare all 17+ car repair shops with ratings, services, prices, and reviews. Your complete local guide.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global Styles - Auto Repair Theme */
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #1f2937;
+            --accent-color: #f59e0b;
+            --light-color: #f8fafc;
+            --dark-color: #111827;
+            --gray-color: #6b7280;
+            --light-gray: #e5e7eb;
+            --premium-color: #f59e0b;
+            --success-color: #059669;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #111827;
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #dc2626 0%, #1f2937 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Matcher Section */
+        .matcher {
+            background-color: var(--light-gray);
+        }
+
+        .matcher-content {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .matcher-question {
+            display: none;
+            padding: 30px;
+        }
+
+        .matcher-question.active {
+            display: block;
+        }
+
+        .matcher-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .matcher-option {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .matcher-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .matcher-result {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .matcher-result.active {
+            display: block;
+        }
+
+        #result-content {
+            margin: 20px 0;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background-color: white;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+        }
+
+        tbody tr {
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background-color: var(--light-gray);
+        }
+
+        .premium-row {
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+
+        .premium-row:hover {
+            background-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .shop-logo-small {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .shop-name-cell {
+            vertical-align: middle;
+        }
+
+        .name-wrapper {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .star-rating {
+            color: var(--premium-color);
+        }
+
+        /* Profiles Section */
+        .profiles {
+            background-color: var(--light-gray);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .profile-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .profile-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .profile-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .profile-type {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .profile-info {
+            margin-bottom: 15px;
+        }
+
+        .profile-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p, .profile-info ul {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-info ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .profile-footer {
+            padding: 15px 20px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .profile-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-rating .star-rating {
+            margin-right: 5px;
+        }
+
+        .profile-link a {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .premium-card {
+            border: 2px solid var(--premium-color);
+        }
+
+        .premium-badge {
+            background-color: var(--premium-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: white;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-logo {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .featured-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .featured-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .benefit h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-list {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 0 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 450px;
+        }
+
+        .map-container iframe {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .premium-contact {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .premium-contact h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .premium-contact p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #9ca3af;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-disclaimer {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+            }
+            
+            .featured-image {
+                order: -1;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+            .matcher-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>O'Fallon Auto Repair Directory</h1>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#matcher">Find Your Match</a></li>
+                    <li><a href="#comparison">Quick Compare</a></li>
+                    <li><a href="#profiles">Shop Profiles</a></li>
+                    <li><a href="#featured">Featured Shop</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Complete O'Fallon Auto Repair Guide - Compare All 17+ Shops</h2>
+            <p>Find the perfect auto repair shop for your car. Compare all mechanics in O'Fallon, Shiloh, and surrounding areas with ratings, services, pricing, and real reviews.</p>
+            <div class="hero-buttons">
+                <a href="#comparison" class="btn btn-primary">Compare All Auto Repair Shops</a>
+                <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Story Section -->
+    <section style="background-color: white; padding: 60px 0;">
+        <div class="container">
+            <h2 style="color: var(--secondary-color); margin-bottom: 30px; text-align: center;">Looking for Auto Repair in O'Fallon? You're Not Alone.</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    With 17+ auto repair shops spread across O'Fallon, Shiloh, and the surrounding Metro East areas, choosing the right mechanic can feel overwhelming.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    Maybe you've driven past Bruce's Auto Repair on East 4th Street wondering about their reputation, or you've heard about Mission Accomplished's 3-year warranty but aren't sure if they're trustworthy. Perhaps you need someone who specializes in European cars or collision repair, or you're dealing with a check engine light and need honest diagnostics without the upsell.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 600;">
+                    That's exactly why we created this complete comparison guide. We've researched every shop, gathered real pricing information, and organized everything so you can find your perfect auto repair match without the runaround.
+                </p>
+                
+                <!-- Stats Section -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; text-align: center;">
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">17+</h3>
+                        <p style="font-weight: 600; margin: 0;">Shops Compared</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">5min</h3>
+                        <p style="font-weight: 600; margin: 0;">To Find Your Match</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">100%</h3>
+                        <p style="font-weight: 600; margin: 0;">Local & Unbiased</p>
+                    </div>
+                </div>
+
+                <!-- Why Compare Section -->
+                <div style="background-color: var(--light-gray); padding: 30px; border-radius: var(--border-radius); margin-top: 40px; text-align: left;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; text-align: center;">Why Compare Before You Choose?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px;">
+                        Auto repair costs in O'Fallon range from $25 quick oil changes to $3,000+ transmission rebuilds. But advertised prices rarely tell the whole story. Hidden fees, unnecessary upsells, and poor workmanship can turn a "great deal" into a nightmare experience.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; font-weight: 600; text-align: center;">
+                        Our side-by-side comparison shows you exactly what to expect at each shop, helping you make an informed decision that saves both time and money.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matcher Section -->
+    <section id="matcher" class="matcher">
+        <div class="container">
+            <h2>Find Your Auto Repair Match</h2>
+            <p>Answer a few questions about your specific needs and preferences to find the perfect auto repair shop for you.</p>
+            
+            <div class="matcher-content">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What type of service do you need?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="maintenance">Routine Maintenance (Oil Change, Brakes)</button>
+                        <button class="matcher-option" data-value="repair">Specific Repair (Engine, Transmission)</button>
+                        <button class="matcher-option" data-value="collision">Accident/Collision Repair</button>
+                        <button class="matcher-option" data-value="diagnostic">Diagnostic/Check Engine Light</button>
+                        <button class="matcher-option" data-value="specialty">Specialty Vehicle Service</button>
+                        <button class="matcher-option" data-value="emergency">Emergency/Urgent Repair</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-2">
+                    <h3>How important is price to you?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="budget">Budget is my top priority</button>
+                        <button class="matcher-option" data-value="value">I want good value for money</button>
+                        <button class="matcher-option" data-value="quality">Quality matters most, price is secondary</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-3">
+                    <h3>What's most important to you in an auto repair shop?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="trust">Honesty and trustworthiness</button>
+                        <button class="matcher-option" data-value="convenience">Convenience and speed</button>
+                        <button class="matcher-option" data-value="warranty">Strong warranty and guarantees</button>
+                        <button class="matcher-option" data-value="service">Customer service and amenities</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Ideal Auto Repair Shop Match</h3>
+                    <div id="result-content"></div>
+                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2>Auto Repair Shop Comparison Chart</h2>
+            <p>Compare all auto repair shops in the O'Fallon area side by side to find the perfect match for your car repair needs.</p>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="type-filter">Shop Type</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="independent">Independent Shop</option>
+                        <option value="chain">Chain/Franchise</option>
+                        <option value="dealership">Dealership Service</option>
+                        <option value="specialty">Specialty Shop</option>
+                        <option value="collision">Collision Center</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="service-filter">Primary Service</label>
+                    <select id="service-filter">
+                        <option value="all">All Services</option>
+                        <option value="general">General Repair</option>
+                        <option value="collision">Collision Repair</option>
+                        <option value="tire">Tire Service</option>
+                        <option value="oil">Oil Change</option>
+                        <option value="specialty">Specialty/Classic</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="feature-filter">Special Features</label>
+                    <select id="feature-filter">
+                        <option value="all">All Features</option>
+                        <option value="warranty">Extended Warranty</option>
+                        <option value="loaner">Loaner Cars</option>
+                        <option value="towing">Towing Service</option>
+                        <option value="insurance">Insurance Work</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Shop Name</th>
+                            <th>Type</th>
+                            <th>Specialties</th>
+                            <th>Years in Business</th>
+                            <th>Special Features</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section id="profiles" class="profiles">
+        <div class="container">
+            <h2>Auto Repair Shop Profiles</h2>
+            <p>Detailed information about each auto repair shop in the O'Fallon area to help you make an informed decision.</p>
+            
+            <div id="shop-profiles" class="profile-grid">
+                <!-- Shop profile cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <div class="premium-badge">Trusted Choice</div>
+            <h2>Featured Shop: Bruce's Auto Repair</h2>
+            <p>Our top recommendation for honest, reliable auto repair with over 30 years of experience serving O'Fallon and Scott Air Force Base.</p>
+            
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="images/logos/bruces.webp" alt="Bruce's Auto Repair logo" class="featured-logo" 
+                         onload="console.log('✅ Featured logo loaded successfully')" 
+                         onerror="console.log('⚠️ Featured logo issue, but continuing'); this.style.opacity='0.7';">
+                </div>
+                
+                <div class="featured-info">
+                    <h3>Why Bruce's Auto Repair Stands Out</h3>
+                    <p>Bruce's Auto Repair has earned the trust of the O'Fallon community through three decades of honest service and expert repairs. With an A+ Better Business Bureau rating and countless testimonials praising their integrity, they're the shop that puts your needs first - even advising against unnecessary work when other shops would profit from it.</p>
+                    
+                    <div class="featured-benefits">
+                        <div class="benefit">
+                            <h4>30+ Years Experience</h4>
+                            <p>Three decades of trusted service in the O'Fallon community</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>A+ BBB Rating</h4>
+                            <p>Better Business Bureau A+ rating demonstrates unwavering commitment to quality</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Honest Service</h4>
+                            <p>Known for advising against unnecessary work - integrity over profit</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Scott AFB Trusted</h4>
+                            <p>Proudly serving military families from Scott Air Force Base</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://brucesautorepair.net/" target="_blank" class="btn btn-primary">Visit Bruce's Auto Repair</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about auto repair and choosing a mechanic in the O'Fallon area.</p>
+            
+            <div class="faq-list">
+                <!-- FAQ items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Find Your Auto Repair Shop</h2>
+            <p>Locate all auto repair shops in the O'Fallon area and get your car fixed right the first time.</p>
+            
+            <div class="contact-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d24966.682117028735!2d-89.92642272345581!3d38.59219199650342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sauto%20repair%20near%20O&#39;Fallon%2C%20IL%2062269!5e0!3m2!1sen!2sus!4v1653508272909!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Ready to get your car repaired?</h3>
+                    <p>Visit any of the auto repair shops listed in our directory or contact them directly through their websites for more information about services, pricing, and appointments.</p>
+                    <p>For honest, reliable service with over 30 years of experience, we recommend:</p>
+                    <div class="premium-contact">
+                        <img src="images/logos/bruces.webp" alt="Bruce's Auto Repair logo" class="contact-logo" 
+                             onload="console.log('✅ Contact logo loaded successfully')" 
+                             onerror="console.log('⚠️ Contact logo issue, but continuing'); this.style.opacity='0.7';">
+                        <div>
+                            <h4>Bruce's Auto Repair</h4>
+                            <p>Phone: (618) 632-8584</p>
+                            <p>Address: 202 E. 4th St., O'Fallon, IL 62269</p>
+                            <p>Website: <a href="https://brucesautorepair.net/" target="_blank">brucesautorepair.net</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>O'Fallon Auto Repair Directory</h3>
+                    <p>Your guide to car repair in the 62269 area</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#matcher">Find Your Match</a></li>
+                        <li><a href="#comparison">Comparison Chart</a></li>
+                        <li><a href="#profiles">Shop Profiles</a></li>
+                        <li><a href="#featured">Featured Shop</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-disclaimer">
+                    <h4>Disclaimer</h4>
+                    <p>This directory is for informational purposes only. Information is subject to change. Please contact individual auto repair shops for the most current services, pricing, and availability. We are not affiliated with any shop listed except our featured partner.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 O'Fallon Auto Repair Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Complete Auto Repair Data for O'Fallon Area (17+ shops)
+        const autoRepairData = [
+          {
+            id: "bruces-auto-repair",
+            name: "Bruce's Auto Repair",
+            type: "Independent Shop",
+            specialties: ["General Auto Repair", "Engine Diagnostics", "Brake Service", "Transmission Repair"],
+            rating: 4.9,
+            reviews: 91,
+            website: "https://brucesautorepair.net/",
+            logo: "images/logos/bruces.webp",
+            address: "202 E. 4th St., O'Fallon, IL 62269",
+            phone: "(618) 632-8584",
+            isPremium: true,
+            services: ["Full Service Auto Repair", "Engine Diagnostics", "Brake Service", "Transmission Repair", "A/C Service", "Fleet Service"],
+            equipment: ["Advanced Diagnostic Equipment", "ASE Certified Technicians"],
+            features: [
+              "30+ years of experience",
+              "A+ Better Business Bureau rating",
+              "Known for honest service",
+              "Trusted by Scott AFB community",
+              "Won't recommend unnecessary work"
+            ],
+            amenities: [
+              "Free estimates",
+              "Military-friendly service",
+              "Established community trust",
+              "Fair and honest pricing"
+            ],
+            yearsInBusiness: 30,
+            aseCertified: true,
+            insurance: ["Most extended warranties"],
+            warranty: "Standard industry warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: false,
+            specialtyVehicles: false
+          },
+          {
+            id: "mission-accomplished-tire-auto",
+            name: "Mission Accomplished Tire & Auto",
+            type: "Independent Shop",
+            specialties: ["Comprehensive Auto Services", "Tire Services", "Battery & Electrical", "Hybrid Vehicle Service"],
+            rating: 5.0,
+            reviews: 56,
+            website: "https://www.missiontireauto.com/",
+            logo: "images/logos/mission.webp",
+            address: "1801 W Hwy 50, O'Fallon, IL 62269",
+            phone: "(618) 589-3280",
+            isPremium: false,
+            services: ["Battery Service", "Brake Service", "Diesel Service", "Drivetrain Service", "Electrical Service", "Engine Service", "Hybrid Service", "Suspension Service", "Transmission Service"],
+            equipment: ["Advanced Diagnostic Equipment", "25-Point Inspection"],
+            features: [
+              "3-year/36,000-mile nationwide warranty",
+              "Loaner car program",
+              "Multi-location service",
+              "Founded in 2011",
+              "Comprehensive service offerings"
+            ],
+            amenities: [
+              "Loaner cars available",
+              "Shuttle service",
+              "Complimentary coffee and WiFi",
+              "Online appointment scheduling",
+              "Financing options"
+            ],
+            yearsInBusiness: 14,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "3 years/36,000 miles",
+            emergencyService: true,
+            shuttleService: true,
+            loanerCarService: true,
+            towingService: true,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: true
+          },
+          {
+            id: "cletes-inc",
+            name: "Clete's, Inc.",
+            type: "Independent Shop",
+            specialties: ["General Auto Repair", "24/7 Emergency Towing", "A/C Service", "Brake Service"],
+            rating: 4.9,
+            reviews: 88,
+            website: "https://www.cletes.net/",
+            logo: "images/logos/cletes.png",
+            address: "138 Douglas Ave., O'Fallon, IL 62269",
+            phone: "(618) 632-5151",
+            isPremium: false,
+            services: ["Full Service Auto Repair", "A/C Service", "Brake Service", "Oil Changes", "Engine Diagnostics", "Suspension Service", "Transmission Repair", "24/7 Emergency Towing"],
+            equipment: ["NAPA AutoCare Center", "ASE Certified Technicians"],
+            features: [
+              "In business since 1960",
+              "A+ Better Business Bureau rating",
+              "AAA Approved Auto Repair facility",
+              "4.9 star rating on CarFax",
+              "24/7 emergency towing service"
+            ],
+            amenities: [
+              "Courtesy shuttle service",
+              "Free WiFi in waiting area",
+              "Complimentary drinks",
+              "Mobile charging station",
+              "After-hours key drop",
+              "Military discounts",
+              "AAA member discounts (10% off up to $75)"
+            ],
+            yearsInBusiness: 64,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "24 months/24,000 miles",
+            emergencyService: true,
+            shuttleService: true,
+            loanerCarService: false,
+            towingService: true,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "full-circle-auto-service",
+            name: "Full Circle Auto Service",
+            type: "Independent Shop",
+            specialties: ["General Auto Repair", "Engine Diagnostics", "Brake Service", "Transmission Service"],
+            rating: 4.5,
+            reviews: 109,
+            website: "https://fullcircleautoservice.com/",
+            logo: "images/logos/fullcircle.webp",
+            address: "510 S. Lincoln Ave., O'Fallon, IL 62269",
+            phone: "(618) 624-5259",
+            isPremium: false,
+            services: ["General Auto Repair", "Engine Diagnostics", "Brake Service", "Transmission Service", "A/C Service", "Electrical Service"],
+            equipment: ["Modern diagnostic equipment", "Professional service bays"],
+            features: [
+              "Established local reputation",
+              "Comprehensive auto services",
+              "Professional service team",
+              "Community-focused business"
+            ],
+            amenities: [
+              "Professional service",
+              "Fair pricing",
+              "Quality workmanship",
+              "Customer-focused approach"
+            ],
+            yearsInBusiness: 15,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "Standard industry warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "karius-automotive",
+            name: "Karius Automotive LLC",
+            type: "Specialty Shop",
+            specialties: ["European/Import Specialist", "BMW Service", "Mercedes Service", "Audi Service"],
+            rating: 4.8,
+            reviews: 42,
+            website: "https://www.kariusautomotive.com/",
+            logo: "images/logos/karius.webp",
+            address: "403 S. Walnut St., O'Fallon, IL 62269",
+            phone: "(618) 726-2399",
+            isPremium: false,
+            services: ["European Car Service", "BMW Service", "Mercedes Service", "Audi Service", "Volkswagen Service", "Import Car Service"],
+            equipment: ["European diagnostic equipment", "Specialized tools"],
+            features: [
+              "European and import specialists",
+              "Specialized diagnostic equipment",
+              "Expert technicians",
+              "Quality European parts"
+            ],
+            amenities: [
+              "European car expertise",
+              "Specialized service",
+              "Quality parts sourcing",
+              "Professional diagnostics"
+            ],
+            yearsInBusiness: 8,
+            aseCertified: true,
+            insurance: ["Extended warranties"],
+            warranty: "Standard warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: false,
+            specialtyVehicles: true
+          },
+          {
+            id: "christian-brothers-automotive",
+            name: "Christian Brothers Automotive Shiloh",
+            type: "Chain/Franchise",
+            specialties: ["General Auto Repair", "Brake Service", "Oil Changes", "Transmission Service"],
+            rating: 4.7,
+            reviews: 85,
+            website: "https://www.cbac.com/shiloh/",
+            logo: "images/logos/cba.png",
+            address: "1310 Thouvenot Lane, O'Fallon, IL 62269",
+            phone: "(618) 437-7132",
+            isPremium: false,
+            services: ["General Auto Repair", "Brake Service", "Oil Changes", "Transmission Service", "A/C Service", "Engine Diagnostics"],
+            equipment: ["Professional diagnostic equipment", "Modern service bays"],
+            features: [
+              "Christian Brothers franchise",
+              "Nice Difference® guarantee",
+              "Professional service standards",
+              "Franchise reliability"
+            ],
+            amenities: [
+              "Complimentary shuttle service",
+              "Professional waiting area",
+              "Franchise standards",
+              "Consistent service quality"
+            ],
+            yearsInBusiness: 10,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "Nationwide warranty",
+            emergencyService: false,
+            shuttleService: true,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "schaefer-autobody",
+            name: "Schaefer Autobody Centers",
+            type: "Collision Center",
+            specialties: ["Collision Repair", "Auto Body Repair", "Paint Repair", "Frame Repair"],
+            rating: 4.8,
+            reviews: 150,
+            website: "https://www.schaeferautobody.com/",
+            logo: "images/logos/schaefer.svg",
+            address: "1290 Central Park Drive, O'Fallon, IL 62269",
+            phone: "(618) 589-7213",
+            isPremium: false,
+            services: ["Auto Body Repair", "Auto Paint Repair", "Frame Repair", "Windshield & Auto Glass Repair", "Hail Repair & Paintless Dent Repair", "Fleet Vehicle Repair"],
+            equipment: ["Professional paint booths", "Frame straightening equipment", "Advanced color matching"],
+            features: [
+              "Acura Certified collision repair",
+              "BMW Certified collision repair",
+              "I-CAR Gold Class certified",
+              "OEM parts guarantee",
+              "Lifetime warranty on repairs"
+            ],
+            amenities: [
+              "Insurance coordination",
+              "Rental car concierge service",
+              "Online estimates",
+              "Wheelchair accessible",
+              "Professional customer service"
+            ],
+            yearsInBusiness: 25,
+            aseCertified: true,
+            insurance: ["All major insurance carriers"],
+            warranty: "Lifetime on repairs",
+            emergencyService: true,
+            shuttleService: false,
+            loanerCarService: true,
+            towingService: true,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "caliber-collision",
+            name: "Caliber Collision",
+            type: "Collision Center",
+            specialties: ["Collision Repair", "Auto Body Paint", "Paintless Dent Repair", "Glass Repair"],
+            rating: 4.7,
+            reviews: 394,
+            website: "https://www.caliber.com/",
+            logo: "images/logos/caliber.png",
+            address: "1274 Central Park Drive, O'Fallon, IL 62269",
+            phone: "(618) 622-0100",
+            isPremium: false,
+            services: ["Auto Body Paint", "Paintless Dent Repair", "Glass Repair", "Fender Repair", "Collision Repair"],
+            equipment: ["Professional paint systems", "Advanced diagnostic scanning", "ADAS calibration equipment"],
+            features: [
+              "I-CAR Gold Class recognized",
+              "Nationwide lifetime warranty",
+              "Pre-approved insurance partner",
+              "Advanced Driver-Assistance System calibrations",
+              "Fleet services available"
+            ],
+            amenities: [
+              "Insurance claim assistance",
+              "Rental car coordination",
+              "Online appointment booking",
+              "Modern customer facilities",
+              "Professional customer service"
+            ],
+            yearsInBusiness: 15,
+            aseCertified: true,
+            insurance: ["All major insurance carriers"],
+            warranty: "Lifetime warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: true,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "steves-auto-body",
+            name: "Steve's Auto Body, Inc.",
+            type: "Collision Center",
+            specialties: ["Collision Repair", "Tesla Approved Service", "Computerized Paint Matching", "Paintless Dent Removal"],
+            rating: 4.9,
+            reviews: 100,
+            website: "https://stevesautobodyco.com/",
+            logo: "images/logos/steves.png",
+            address: "120 Behrens Drive, O'Fallon, IL 62269",
+            phone: "(618) 632-2575",
+            isPremium: false,
+            services: ["Collision Repair", "Computerized Paint Matching", "Paintless Dent Removal", "Auto Glass Replacement", "Hail Damage Repair"],
+            equipment: ["Tesla-approved equipment", "Computerized paint matching", "I-Car Gold certified facility", "PPG Waterborne Paint"],
+            features: [
+              "Tesla Approved Collision Center",
+              "Family-owned since 1975",
+              "I-Car Gold certified since 1999",
+              "Lifetime guarantee on workmanship",
+              "Professional paint matching"
+            ],
+            amenities: [
+              "Insurance claim processing",
+              "Rental car assistance",
+              "Wheelchair accessible",
+              "Professional customer service",
+              "Quality workmanship guarantee"
+            ],
+            yearsInBusiness: 49,
+            aseCertified: true,
+            insurance: ["All major insurance carriers"],
+            warranty: "Lifetime on workmanship",
+            emergencyService: true,
+            shuttleService: false,
+            loanerCarService: true,
+            towingService: true,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: true,
+            specialtyVehicles: true
+          },
+          {
+            id: "thorpes-body-corvette",
+            name: "Thorpe's Body & Corvette Shop",
+            type: "Specialty Shop",
+            specialties: ["Classic Car Restoration", "Corvette Specialist", "Muscle Car Restoration", "High-End Restoration"],
+            rating: 4.8,
+            reviews: 35,
+            website: "http://thorpesbodyandcorvetteshop.com/",
+            logo: "images/logos/thorpes.jpg",
+            address: "615 W. Highway 50, O'Fallon, IL 62269",
+            phone: "(618) 632-8080",
+            isPremium: false,
+            services: ["Classic Car Restoration", "Corvette Restoration", "Muscle Car Restoration", "Custom Paint Work", "High-End Collision Repair"],
+            equipment: ["Professional restoration equipment", "Custom paint booth", "Specialized tools"],
+            features: [
+              "National reputation for restoration",
+              "Corvette and classic car specialists",
+              "High-end restoration work",
+              "Custom paint and bodywork",
+              "Concours-quality restorations"
+            ],
+            amenities: [
+              "Specialty restoration services",
+              "Custom work capabilities",
+              "Expert craftsmanship",
+              "Show-quality results"
+            ],
+            yearsInBusiness: 25,
+            aseCertified: true,
+            insurance: ["Specialty vehicle insurance"],
+            warranty: "Restoration warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: false,
+            specialtyVehicles: true
+          },
+          {
+            id: "dobbs-tire-auto",
+            name: "Dobbs Tire & Auto Centers",
+            type: "Chain/Franchise",
+            specialties: ["Tire Service", "General Auto Repair", "Oil Changes", "Brake Service"],
+            rating: 4.2,
+            reviews: 120,
+            website: "https://www.gotodobbs.com/",
+            logo: "images/logos/dobbs.svg",
+            address: "4200 Green Mount Crossing Dr., Shiloh, IL 62269",
+            phone: "(618) 622-9810",
+            isPremium: false,
+            services: ["Tire Sales & Service", "A/C Service", "Alignments", "Batteries", "Brakes", "Diagnostic Services", "Oil Changes", "State Inspections", "Transmission Service"],
+            equipment: ["Tire service equipment", "Alignment equipment", "Diagnostic tools"],
+            features: [
+              "Regional tire and auto chain",
+              "Fixed Forever guarantee on many repairs",
+              "Comprehensive service offerings",
+              "Saturday hours available"
+            ],
+            amenities: [
+              "Free shuttle service (5-mile radius)",
+              "Free WiFi",
+              "After-hours key drop",
+              "Weekend hours",
+              "Convenient location"
+            ],
+            yearsInBusiness: 20,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "Fixed Forever guarantee",
+            emergencyService: false,
+            shuttleService: true,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: true,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "meineke-car-care",
+            name: "Meineke Car Care Center",
+            type: "Chain/Franchise",
+            specialties: ["General Auto Repair", "Exhaust Service", "Brake Service", "Oil Changes"],
+            rating: 4.3,
+            reviews: 75,
+            website: "https://www.meineke.com/",
+            logo: "images/logos/meineke.png",
+            address: "720 Cambridge Boulevard, O'Fallon, IL 62269",
+            phone: "(618) 589-8014",
+            isPremium: false,
+            services: ["General Auto Repair", "Exhaust Service", "Brake Service", "Oil Changes", "Transmission Service", "A/C Service"],
+            equipment: ["Professional service equipment", "Diagnostic tools"],
+            features: [
+              "National Meineke franchise",
+              "Standardized service procedures",
+              "Nationwide warranty coverage",
+              "Established brand reputation"
+            ],
+            amenities: [
+              "National franchise standards",
+              "Consistent service quality",
+              "Warranty coverage",
+              "Professional service"
+            ],
+            yearsInBusiness: 12,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "Nationwide warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "firestone-complete-auto",
+            name: "Firestone Complete Auto Care",
+            type: "Chain/Franchise",
+            specialties: ["Tire Service", "General Auto Repair", "Oil Changes", "Brake Service"],
+            rating: 4.1,
+            reviews: 95,
+            website: "https://www.firestonecompleteautocare.com/",
+            logo: "images/logos/firestone.svg",
+            address: "408 Ward Dr, Scott AFB, IL 62225",
+            phone: "(618) 207-4931",
+            isPremium: false,
+            services: ["Tire Service", "General Auto Repair", "Oil Changes", "Brake Service", "A/C Service", "Transmission Service"],
+            equipment: ["Tire service equipment", "Professional diagnostic tools"],
+            features: [
+              "National Firestone franchise",
+              "Located on Scott Air Force Base",
+              "Military-friendly service",
+              "Comprehensive auto services"
+            ],
+            amenities: [
+              "On-base location for military",
+              "Professional service standards",
+              "National warranty coverage",
+              "Military-focused service"
+            ],
+            yearsInBusiness: 10,
+            aseCertified: true,
+            insurance: ["Most major insurance"],
+            warranty: "National warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: true,
+            specialtyVehicles: false
+          },
+          {
+            id: "jack-schmitt-chevrolet",
+            name: "Jack Schmitt Chevrolet of O'Fallon",
+            type: "Dealership Service",
+            specialties: ["Chevrolet Service", "Warranty Work", "GM Parts", "Factory Service"],
+            rating: 4.1,
+            reviews: 85,
+            website: "https://www.jackschmitt.com/",
+            logo: "images/logos/jack.webp",
+            address: "127 Regency Park, O'Fallon, IL 62269",
+            phone: "(618) 628-2500",
+            isPremium: false,
+            services: ["Chevrolet Service", "Warranty Work", "GM Parts Service", "Factory-Certified Service", "Multi-point Inspections"],
+            equipment: ["Factory diagnostic equipment", "GM-certified tools", "15 service bays"],
+            features: [
+              "Chevrolet dealership since 1927",
+              "Factory-certified technicians",
+              "Genuine GM parts",
+              "Warranty service specialists",
+              "A+ Better Business Bureau rating"
+            ],
+            amenities: [
+              "Complimentary shuttle service",
+              "Customer lounge",
+              "Complimentary beverages/snacks",
+              "Free WiFi",
+              "Computer work stations",
+              "Kids play room",
+              "Rental service available"
+            ],
+            yearsInBusiness: 97,
+            aseCertified: true,
+            insurance: ["Chevrolet warranty", "Extended warranties"],
+            warranty: "GM factory warranty",
+            emergencyService: false,
+            shuttleService: true,
+            loanerCarService: true,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: false,
+            specialtyVehicles: false
+          },
+          {
+            id: "serra-honda-ofallon",
+            name: "Serra Honda O'Fallon",
+            type: "Dealership Service",
+            specialties: ["Honda Service", "Warranty Work", "Honda Parts", "Factory Service"],
+            rating: 4.2,
+            reviews: 78,
+            website: "https://www.serrahondaofallon.com/",
+            logo: "images/logos/serra.avif",
+            address: "1268 Central Park Dr, O'Fallon, IL 62269",
+            phone: "(618) 206-2188",
+            isPremium: false,
+            services: ["Honda Service", "Warranty Work", "Honda Parts Service", "Factory-Certified Service", "Multi-point Inspections"],
+            equipment: ["Factory diagnostic equipment", "Honda-certified tools", "Professional service bays"],
+            features: [
+              "Honda dealership service",
+              "Factory-certified technicians",
+              "Genuine Honda parts",
+              "Warranty service specialists",
+              "Professional service standards"
+            ],
+            amenities: [
+              "Professional customer service",
+              "Comfortable waiting area",
+              "Honda factory standards",
+              "Warranty service expertise"
+            ],
+            yearsInBusiness: 15,
+            aseCertified: true,
+            insurance: ["Honda warranty", "Extended warranties"],
+            warranty: "Honda factory warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: true,
+            insuranceWork: false,
+            specialtyVehicles: false
+          },
+          {
+            id: "distlers-automotive",
+            name: "Distler's Automotive Repair, Inc.",
+            type: "Specialty Shop",
+            specialties: ["European/Import Specialist", "Mercedes Service", "BMW Service", "Audi Service"],
+            rating: 4.8,
+            reviews: 65,
+            website: "http://www.distlerauto.com/",
+            logo: "images/logos/distlers.jpg",
+            address: "100 N. Main St., Shiloh, IL 62269",
+            phone: "(618) 632-7449",
+            isPremium: false,
+            services: ["European Car Service", "Mercedes Service", "BMW Service", "Audi Service", "Volkswagen Service", "Toyota Service", "Lexus Service", "Honda Service"],
+            equipment: ["European diagnostic equipment", "State-of-the-art diagnostic tools"],
+            features: [
+              "Family-owned since 1975",
+              "European and import specialists",
+              "A+ Better Business Bureau rating",
+              "AAA Approved Auto Repair facility",
+              "Specializes in Scott AFB community"
+            ],
+            amenities: [
+              "European car expertise",
+              "AAA member discounts",
+              "Military-friendly service",
+              "Quality service reputation"
+            ],
+            yearsInBusiness: 49,
+            aseCertified: true,
+            insurance: ["Most extended warranties"],
+            warranty: "Standard warranty",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: false,
+            onlineBooking: false,
+            insuranceWork: false,
+            specialtyVehicles: true
+          },
+          {
+            id: "scott-afb-auto-hobby",
+            name: "Scott AFB Auto Hobby Shop",
+            type: "Specialty Shop",
+            specialties: ["DIY Auto Repair", "Military Service", "Self-Service Bays", "Tool Rental"],
+            rating: 4.5,
+            reviews: 25,
+            website: "https://375fss.com/auto-hobby-shop/",
+            logo: "images/logos/afhobby.png",
+            address: "Building 1989, Scott AFB, IL 62225",
+            phone: "(618) 256-6033",
+            isPremium: false,
+            services: ["DIY Auto Repair", "Self-Service Bays", "Tool Rental", "Military Auto Support"],
+            equipment: ["DIY service bays", "Tool rental", "Professional equipment access"],
+            features: [
+              "Military base facility",
+              "DIY service focus",
+              "Tool rental available",
+              "Military personnel support",
+              "Self-service capabilities"
+            ],
+            amenities: [
+              "Military-only access",
+              "DIY service bays",
+              "Tool rental program",
+              "Military community focus"
+            ],
+            yearsInBusiness: 20,
+            aseCertified: false,
+            insurance: ["Military benefits"],
+            warranty: "N/A (DIY service)",
+            emergencyService: false,
+            shuttleService: false,
+            loanerCarService: false,
+            towingService: false,
+            weekendHours: true,
+            onlineBooking: false,
+            insuranceWork: false,
+            specialtyVehicles: false
+          }
+        ];
+
+        // FAQ Data for Auto Repair
+        const faqData = [
+          {
+            question: "Which O'Fallon car repair shop accepts my insurance?",
+            answer: "Most O'Fallon car repair shops accept major insurance plans including State Farm, Allstate, GEICO, and Progressive for auto accident repairs. Bruce's Auto Repair, Full Circle Auto Service, and Steve's Auto Body all work directly with insurance companies for seamless claims processing. For general maintenance and repairs, most shops accept extended warranty plans and some offer financing options. Always call ahead to verify your specific insurance coverage, as policies and deductibles can vary significantly between different types of repairs."
+          },
+          {
+            question: "Where can I get same-day car repair in O'Fallon, Illinois?",
+            answer: "For same-day car repair in O'Fallon, IL, Bruce's Auto Repair and Full Circle Auto Service often accommodate emergency repairs during business hours. Quick Lube locations handle immediate oil changes and basic maintenance. For brake emergencies, transmission problems, or engine issues, call ahead as same-day availability depends on the severity of the problem and shop schedule. Many O'Fallon auto repair shops reserve time slots for urgent repairs, especially during weekdays. For after-hours emergencies, several shops provide towing service referrals to get your car to their facility first thing the next morning."
+          },
+          {
+            question: "What is the average cost of car repair in O'Fallon?",
+            answer: "Car repair costs in O'Fallon, IL vary by service type and shop. Oil changes typically range from $25-75, brake pad replacement costs $150-400 per axle, and transmission repairs can range from $300-3,000 depending on complexity. Diagnostic fees usually run $100-150, which most shops apply toward repair costs. Bruce's Auto Repair and other established O'Fallon shops often provide free estimates for major repairs. Labor rates in the O'Fallon area average $80-120 per hour, which is competitive with the Metro East region. Many shops offer package deals for multiple services and discounts for seniors or military personnel."
+          },
+          {
+            question: "Which O'Fallon auto repair shops specialize in transmission repair?",
+            answer: "For transmission repair in O'Fallon, Full Circle Auto Service and Bruce's Auto Repair both handle transmission diagnostics and repairs. Several shops specialize in automatic transmission rebuilds and offer warranties on their work. When choosing a transmission specialist in O'Fallon, look for shops with dedicated transmission equipment, ASE-certified technicians, and positive reviews specifically mentioning transmission work. Transmission repairs are complex and expensive, so getting multiple estimates from O'Fallon shops is recommended. Many offer free diagnostic services to determine if your transmission needs repair, rebuild, or replacement."
+          },
+          {
+            question: "Where can I get brake repair in O'Fallon near Scott Air Force Base?",
+            answer: "For brake repair near Scott Air Force Base in O'Fallon, several shops offer military discounts and convenient locations. Bruce's Auto Repair and Steve's Auto Body are both easily accessible from Scott AFB and provide complete brake services including pad replacement, rotor resurfacing, and brake fluid changes. Many O'Fallon brake specialists offer same-day service for brake pad replacement. Military families can often get discounted brake services, and most shops provide free brake inspections. For emergency brake issues, several O'Fallon auto repair shops prioritize military personnel and offer expedited service for active duty members."
+          },
+          {
+            question: "Which O'Fallon mechanic is best for engine diagnostics and check engine lights?",
+            answer: "For engine diagnostics in O'Fallon, Bruce's Auto Repair has advanced diagnostic equipment and experience with check engine light issues across all vehicle makes and models. Most established O'Fallon auto repair shops can diagnose engine problems using OBD-II scanners and provide detailed reports of issues found. Engine diagnostic fees in O'Fallon typically range from $100-150, which is usually applied toward repair costs. When your check engine light comes on, prompt diagnosis can prevent more expensive repairs. Several O'Fallon mechanics offer free diagnostic scans for simple code reading, but comprehensive engine diagnostics require more detailed testing."
+          },
+          {
+            question: "Do any O'Fallon auto repair shops offer oil change and tire services?",
+            answer: "Yes, most full-service auto repair shops in O'Fallon offer both oil changes and tire services. Bruce's Auto Repair, Full Circle Auto Service, and other comprehensive shops provide oil changes, tire installation, tire rotation, and wheel balancing. For quick oil changes, several fast-lube locations in O'Fallon can complete service in 15-30 minutes. Tire services in O'Fallon include new tire sales, tire repair, wheel alignment, and seasonal tire storage. Many shops offer package deals combining oil changes with tire rotation or multi-point inspections, providing better value for routine maintenance."
+          },
+          {
+            question: "Which O'Fallon car repair shops work on European cars like BMW, Mercedes, and Audi?",
+            answer: "Several O'Fallon auto repair shops have experience with European vehicles including BMW, Mercedes-Benz, Audi, and Volkswagen. Karius Automotive LLC and Distler's Automotive Repair specialize in European vehicles with the proper diagnostic equipment and expertise. While most general repair shops can handle basic maintenance, specialized European car repair requires specific diagnostic tools and training. When choosing an O'Fallon shop for European car repair, ask about their experience with your specific make and model, available diagnostic equipment, and parts sourcing capabilities."
+          },
+          {
+            question: "Where can I get auto body repair and collision repair in O'Fallon after an accident?",
+            answer: "For auto body and collision repair in O'Fallon, Steve's Auto Body, Schaefer Autobody Centers, and Caliber Collision specialize in accident damage repair and work directly with insurance companies for seamless claims processing. These O'Fallon auto body shops offer comprehensive collision repair including frame straightening, paint matching, and parts replacement. When choosing collision repair in O'Fallon, look for shops certified by major insurance companies and those with I-CAR certifications. Many auto body shops in O'Fallon provide free estimates, rental car coordination, and can handle the entire insurance claim process from start to finish."
+          },
+          {
+            question: "Which O'Fallon auto repair shops are open evenings and weekends?",
+            answer: "Limited O'Fallon auto repair shops offer evening and weekend hours, with most operating standard business hours Monday through Friday. Dobbs Tire & Auto Centers offers Saturday hours for convenience. Some shops extend hours until 6-7 PM on weekdays for customer convenience. For weekend service, a few O'Fallon locations open Saturday mornings for oil changes and basic maintenance. Emergency repairs can sometimes be accommodated after hours by calling shops directly - many provide emergency contact numbers for existing customers. For true after-hours needs, some O'Fallon mechanics offer mobile repair services or can arrange towing to have your vehicle ready for first-thing Monday morning service."
+          },
+          {
+            question: "How do I choose between different auto repair shops in O'Fallon?",
+            answer: "When choosing an auto repair shop in O'Fallon, consider several factors: reputation (check Google reviews and Better Business Bureau ratings), certifications (ASE-certified technicians), services offered (one-stop vs. specialized), pricing transparency (written estimates), and warranty policies. Bruce's Auto Repair, Full Circle Auto Service, and other established O'Fallon shops have built strong local reputations over many years. For specialized repairs, choose shops with experience in your specific vehicle type or problem. Location convenience, insurance acceptance, and customer service quality are also important factors when selecting your preferred O'Fallon auto repair shop."
+          },
+          {
+            question: "What should I expect during my first visit to an O'Fallon auto repair shop?",
+            answer: "During your first visit to an O'Fallon auto repair shop, expect to provide your vehicle's history, describe the problem in detail, and receive a preliminary inspection. Most reputable O'Fallon shops offer free initial consultations and will explain their diagnostic process. You should receive a written estimate before any work begins, with labor and parts costs clearly itemized. Established shops like Bruce's Auto Repair will walk you through their findings and explain repair options. Initial visits typically take 30-60 minutes for diagnosis, with actual repairs scheduled for a later appointment unless you need immediate emergency service."
+          }
+        ];
+
+        // SORT FUNCTION FOR MAINTAINING PREMIUM FIRST ORDER
+        function sortShopsForDisplay(shops) {
+            return [...shops].sort((a, b) => {
+                // Premium shops always come first
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                // Then sort by rating (highest first)
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                // Finally by name alphabetically
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        // BULLETPROOF INITIALIZATION
+        function initializeSite() {
+            console.log('🚀 Starting auto repair site initialization...');
+            console.log('📊 Auto repair data loaded:', autoRepairData.length, 'shops');
+            console.log('❓ FAQ data loaded:', faqData.length, 'questions');
+            
+            // Debug logo paths
+            console.log('🖼️ Logo paths check:');
+            autoRepairData.forEach(shop => {
+                console.log(`${shop.name}: ${shop.logo}`);
+            });
+            
+            try {
+                initializeNavigation();
+                console.log('✅ Navigation initialized');
+                
+                populateComparisonTable();
+                console.log('✅ Comparison table populated');
+                
+                populateShopProfiles();
+                console.log('✅ Shop profiles populated');
+                
+                setupFilters();
+                console.log('✅ Filters initialized');
+                
+                setupMatcher();
+                console.log('✅ Matcher initialized');
+                
+                populateFAQSection();
+                console.log('✅ FAQ section populated');
+                
+                console.log('🎉 Auto repair site initialization complete!');
+                
+            } catch (error) {
+                console.error('❌ Error during initialization:', error);
+            }
+        }
+
+        // Multiple initialization triggers
+        document.addEventListener('DOMContentLoaded', initializeSite);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSite);
+        } else {
+            initializeSite();
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(initializeSite, 100);
+        });
+        
+        setTimeout(function() {
+            if (!document.querySelector('#comparison-table tbody tr')) {
+                console.log('🔄 Fallback initialization triggered');
+                initializeSite();
+            }
+        }, 500);
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans.forEach(span => span.classList.toggle('active'));
+                });
+            }
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.querySelectorAll('span').forEach(span => span.classList.remove('active'));
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Populate comparison table
+        function populateComparisonTable() {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            if (!tableBody) {
+                console.warn('⚠️ Comparison table tbody not found');
+                return;
+            }
+            
+            tableBody.innerHTML = '';
+            
+            // Use the sort function to ensure premium shops appear first
+            const sortedShops = sortShopsForDisplay(autoRepairData);
+            
+            sortedShops.forEach(shop => {
+                const row = document.createElement('tr');
+                if (shop.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Shop name cell
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('shop-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = shop.logo;
+                logo.alt = `${shop.name} Logo`;
+                logo.classList.add('shop-logo-small');
+                logo.loading = 'lazy';
+                
+                // Simple logo loading handler
+                logo.onload = function() {
+                    console.log(`✅ Logo loaded: ${this.src}`);
+                };
+                
+                logo.onerror = function() {
+                    console.log(`❌ Failed to load logo: ${this.src}`);
+                    // Simple retry once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = shop.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (shop.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Trusted Choice';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Type cell
+                const typeCell = document.createElement('td');
+                typeCell.textContent = shop.type;
+                row.appendChild(typeCell);
+                
+                // Specialties cell
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = shop.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                // Years cell
+                const yearsCell = document.createElement('td');
+                yearsCell.textContent = shop.yearsInBusiness + ' years';
+                row.appendChild(yearsCell);
+                
+                // Features cell
+                const featuresCell = document.createElement('td');
+                const topFeatures = [];
+                if (shop.loanerCarService) topFeatures.push('Loaner Cars');
+                if (shop.towingService) topFeatures.push('Towing');
+                if (shop.weekendHours) topFeatures.push('Weekend Hours');
+                if (shop.shuttleService) topFeatures.push('Shuttle');
+                if (shop.onlineBooking) topFeatures.push('Online Booking');
+                featuresCell.textContent = topFeatures.length > 0 ? topFeatures.join(', ') : 'Standard Service';
+                row.appendChild(featuresCell);
+                
+                // Rating cell
+                const ratingCell = document.createElement('td');
+                
+                if (shop.rating) {
+                    const ratingDiv = document.createElement('div');
+                    ratingDiv.classList.add('star-rating');
+                    
+                    const fullStars = Math.floor(shop.rating);
+                    const hasHalfStar = shop.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < 5; i++) {
+                        const star = document.createElement('i');
+                        
+                        if (i < fullStars) {
+                            star.className = 'fas fa-star';
+                        } else if (i === fullStars && hasHalfStar) {
+                            star.className = 'fas fa-star-half-alt';
+                        } else {
+                            star.className = 'far fa-star';
+                        }
+                        
+                        ratingDiv.appendChild(star);
+                    }
+                    
+                    const ratingText = document.createElement('div');
+                    ratingText.textContent = `${shop.rating} (${shop.reviews} reviews)`;
+                    
+                    ratingCell.appendChild(ratingDiv);
+                    ratingCell.appendChild(ratingText);
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                
+                row.appendChild(ratingCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Populate shop profiles
+        function populateShopProfiles() {
+            const profilesContainer = document.getElementById('shop-profiles');
+            if (!profilesContainer) {
+                console.warn('⚠️ Shop profiles container not found');
+                return;
+            }
+            
+            profilesContainer.innerHTML = '';
+            
+            // Use the sort function to ensure premium shops appear first
+            const sortedShops = sortShopsForDisplay(autoRepairData);
+            
+            sortedShops.forEach(shop => {
+                const profileCard = document.createElement('div');
+                profileCard.className = 'profile-card';
+                if (shop.isPremium) {
+                    profileCard.classList.add('premium-card');
+                }
+                
+                // Profile header
+                const profileHeader = document.createElement('div');
+                profileHeader.className = 'profile-header';
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = shop.logo;
+                logoImg.alt = `${shop.name} logo`;
+                logoImg.className = 'profile-logo';
+                
+                // Simple loading handler for profile logos
+                logoImg.onload = function() {
+                    console.log(`✅ Profile logo loaded: ${this.src}`);
+                };
+                
+                logoImg.onerror = function() {
+                    console.log(`❌ Failed to load profile logo: ${this.src}`);
+                    // Simple retry
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                const profileTitle = document.createElement('div');
+                profileTitle.className = 'profile-title';
+                
+                const nameHeading = document.createElement('h3');
+                nameHeading.textContent = shop.name;
+                if (shop.isPremium) {
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'Trusted Choice';
+                    premiumBadge.style.fontSize = '0.7rem';
+                    premiumBadge.style.padding = '2px 8px';
+                    premiumBadge.style.marginLeft = '8px';
+                    nameHeading.appendChild(premiumBadge);
+                }
+                
+                const typeText = document.createElement('div');
+                typeText.className = 'profile-type';
+                typeText.textContent = shop.type;
+                
+                profileTitle.appendChild(nameHeading);
+                profileTitle.appendChild(typeText);
+                
+                profileHeader.appendChild(logoImg);
+                profileHeader.appendChild(profileTitle);
+                
+                // Profile body
+                const profileBody = document.createElement('div');
+                profileBody.className = 'profile-body';
+                
+                // Specialties info
+                const specialtiesInfo = document.createElement('div');
+                specialtiesInfo.className = 'profile-info';
+                
+                const specialtiesHeading = document.createElement('h4');
+                specialtiesHeading.textContent = 'Specialties';
+                
+                const specialtiesList = document.createElement('ul');
+                
+                shop.specialties.forEach(specialty => {
+                    const specialtyItem = document.createElement('li');
+                    specialtyItem.textContent = specialty;
+                    specialtiesList.appendChild(specialtyItem);
+                });
+                
+                specialtiesInfo.appendChild(specialtiesHeading);
+                specialtiesInfo.appendChild(specialtiesList);
+                
+                // Services info
+                const servicesInfo = document.createElement('div');
+                servicesInfo.className = 'profile-info';
+                
+                const servicesHeading = document.createElement('h4');
+                servicesHeading.textContent = 'Services';
+                
+                const servicesList = document.createElement('ul');
+                
+                shop.services.slice(0, 4).forEach(service => {
+                    const serviceItem = document.createElement('li');
+                    serviceItem.textContent = service;
+                    servicesList.appendChild(serviceItem);
+                });
+                
+                servicesInfo.appendChild(servicesHeading);
+                servicesInfo.appendChild(servicesList);
+                
+                // Features info
+                const featuresInfo = document.createElement('div');
+                featuresInfo.className = 'profile-info';
+                
+                const featuresHeading = document.createElement('h4');
+                featuresHeading.textContent = 'Key Features';
+                
+                const featuresList = document.createElement('ul');
+                
+                shop.features.slice(0, 3).forEach(feature => {
+                    const featureItem = document.createElement('li');
+                    featureItem.textContent = feature;
+                    featuresList.appendChild(featureItem);
+                });
+                
+                featuresInfo.appendChild(featuresHeading);
+                featuresInfo.appendChild(featuresList);
+                
+                profileBody.appendChild(specialtiesInfo);
+                profileBody.appendChild(servicesInfo);
+                profileBody.appendChild(featuresInfo);
+                
+                // Profile footer
+                const profileFooter = document.createElement('div');
+                profileFooter.className = 'profile-footer';
+                
+                const ratingDiv = document.createElement('div');
+                ratingDiv.className = 'profile-rating';
+                
+                if (shop.rating) {
+                    const ratingStars = document.createElement('div');
+                    ratingStars.className = 'star-rating';
+                    
+                    const fullStars = Math.floor(shop.rating);
+                    const hasHalfStar = shop.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        ratingStars.innerHTML += '★';
+                    }
+                    
+                    if (hasHalfStar) {
+                        ratingStars.innerHTML += '½';
+                    }
+                    
+                    const ratingText = document.createElement('span');
+                    ratingText.textContent = `${shop.rating} (${shop.reviews} reviews)`;
+                    
+                    ratingDiv.appendChild(ratingStars);
+                    ratingDiv.appendChild(ratingText);
+                } else {
+                    ratingDiv.textContent = 'No rating';
+                }
+                
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'profile-link';
+                
+                const websiteLink = document.createElement('a');
+                websiteLink.href = shop.website;
+                websiteLink.target = '_blank';
+                websiteLink.textContent = 'Visit Website';
+                
+                linkDiv.appendChild(websiteLink);
+                
+                profileFooter.appendChild(ratingDiv);
+                profileFooter.appendChild(linkDiv);
+                
+                // Assemble profile card
+                profileCard.appendChild(profileHeader);
+                profileCard.appendChild(profileBody);
+                profileCard.appendChild(profileFooter);
+                
+                profilesContainer.appendChild(profileCard);
+            });
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            const typeFilter = document.getElementById('type-filter');
+            const serviceFilter = document.getElementById('service-filter');
+            const featureFilter = document.getElementById('feature-filter');
+            
+            if (!typeFilter || !serviceFilter || !featureFilter) {
+                console.warn('⚠️ Filter elements not found');
+                return;
+            }
+            
+            const applyFilters = () => {
+                const typeValue = typeFilter.value;
+                const serviceValue = serviceFilter.value;
+                const featureValue = featureFilter.value;
+                
+                console.log('🔍 Applying filters:', { typeValue, serviceValue, featureValue });
+                
+                const filteredShops = autoRepairData.filter(shop => {
+                    // Type filter
+                    if (typeValue !== 'all') {
+                        const shopTypeLower = shop.type.toLowerCase();
+                        let typeMatch = false;
+                        
+                        switch(typeValue) {
+                            case 'independent':
+                                typeMatch = shopTypeLower.includes('independent');
+                                break;
+                            case 'chain':
+                                typeMatch = shopTypeLower.includes('chain') || shopTypeLower.includes('franchise');
+                                break;
+                            case 'dealership':
+                                typeMatch = shopTypeLower.includes('dealership');
+                                break;
+                            case 'specialty':
+                                typeMatch = shopTypeLower.includes('specialty');
+                                break;
+                            case 'collision':
+                                typeMatch = shopTypeLower.includes('collision');
+                                break;
+                            default:
+                                typeMatch = shopTypeLower.includes(typeValue);
+                        }
+                        
+                        if (!typeMatch) return false;
+                    }
+                    
+                    // Service filter
+                    if (serviceValue !== 'all') {
+                        const shopServices = shop.services.map(s => s.toLowerCase()).join(' ');
+                        const shopSpecialties = shop.specialties.map(s => s.toLowerCase()).join(' ');
+                        const combinedServices = shopServices + ' ' + shopSpecialties;
+                        
+                        let serviceMatch = false;
+                        
+                        switch(serviceValue) {
+                            case 'general':
+                                serviceMatch = combinedServices.includes('general');
+                                break;
+                            case 'collision':
+                                serviceMatch = combinedServices.includes('collision') || combinedServices.includes('body');
+                                break;
+                            case 'tire':
+                                serviceMatch = combinedServices.includes('tire');
+                                break;
+                            case 'oil':
+                                serviceMatch = combinedServices.includes('oil');
+                                break;
+                            case 'specialty':
+                                serviceMatch = combinedServices.includes('specialty') || combinedServices.includes('european') || combinedServices.includes('classic');
+                                break;
+                            default:
+                                serviceMatch = combinedServices.includes(serviceValue);
+                        }
+                        
+                        if (!serviceMatch) return false;
+                    }
+                    
+                    // Feature filter
+                    if (featureValue !== 'all') {
+                        if (featureValue === 'warranty' && !shop.warranty.includes('year')) return false;
+                        if (featureValue === 'loaner' && !shop.loanerCarService) return false;
+                        if (featureValue === 'towing' && !shop.towingService) return false;
+                        if (featureValue === 'insurance' && !shop.insuranceWork) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                console.log('✅ Filtered results:', filteredShops.length, 'shops');
+                
+                // Update the table with filtered data
+                updateTableWithFilteredData(filteredShops);
+            };
+            
+            typeFilter.addEventListener('change', applyFilters);
+            serviceFilter.addEventListener('change', applyFilters);
+            featureFilter.addEventListener('change', applyFilters);
+        }
+
+        // Update table with filtered data
+        function updateTableWithFilteredData(filteredShops) {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            tableBody.innerHTML = '';
+            
+            // Apply same sorting to filtered results to ensure premium stays on top
+            const sortedFilteredShops = sortShopsForDisplay(filteredShops);
+            
+            console.log('🔄 Updating table with sorted filtered shops:', sortedFilteredShops.length);
+            
+            sortedFilteredShops.forEach(shop => {
+                const row = document.createElement('tr');
+                if (shop.isPremium) {
+                    row.classList.add('premium-row');
+                    console.log('⭐ Premium shop in filtered results:', shop.name);
+                }
+                
+                // Create cells similar to populateComparisonTable
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('shop-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = shop.logo;
+                logo.alt = `${shop.name} Logo`;
+                logo.classList.add('shop-logo-small');
+                logo.loading = 'lazy';
+                
+                // Simple logo loading handler
+                logo.onload = function() {
+                    console.log(`✅ Filtered logo loaded: ${this.src}`);
+                };
+                
+                logo.onerror = function() {
+                    console.log(`❌ Failed to load filtered logo: ${this.src}`);
+                    // Simple retry once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = shop.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (shop.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Trusted Choice';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Add other cells
+                const typeCell = document.createElement('td');
+                typeCell.textContent = shop.type;
+                row.appendChild(typeCell);
+                
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = shop.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                const yearsCell = document.createElement('td');
+                yearsCell.textContent = shop.yearsInBusiness + ' years';
+                row.appendChild(yearsCell);
+                
+                const featuresCell = document.createElement('td');
+                const topFeatures = [];
+                if (shop.loanerCarService) topFeatures.push('Loaner Cars');
+                if (shop.towingService) topFeatures.push('Towing');
+                if (shop.weekendHours) topFeatures.push('Weekend Hours');
+                if (shop.shuttleService) topFeatures.push('Shuttle');
+                featuresCell.textContent = topFeatures.length > 0 ? topFeatures.join(', ') : 'Standard Service';
+                row.appendChild(featuresCell);
+                
+                const ratingCell = document.createElement('td');
+                if (shop.rating) {
+                    const ratingText = `${shop.rating} (${shop.reviews} reviews)`;
+                    ratingCell.textContent = ratingText;
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                row.appendChild(ratingCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Setup matcher functionality
+        function setupMatcher() {
+            const questions = document.querySelectorAll('.matcher-question');
+            const result = document.getElementById('matcher-result');
+            const resultContent = document.getElementById('result-content');
+            const restartButton = document.getElementById('restart-matcher');
+            
+            if (!questions.length || !result || !resultContent || !restartButton) {
+                console.warn('⚠️ Matcher elements not found');
+                return;
+            }
+            
+            let currentQuestion = 0;
+            const answers = {};
+            
+            questions.forEach((question, index) => {
+                const options = question.querySelectorAll('.matcher-option');
+                
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        answers[`question${index + 1}`] = option.getAttribute('data-value');
+                        
+                        question.classList.remove('active');
+                        
+                        if (index < questions.length - 1) {
+                            questions[index + 1].classList.add('active');
+                            currentQuestion = index + 1;
+                        } else {
+                            showMatcherResult();
+                            result.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            restartButton.addEventListener('click', () => {
+                for (let key in answers) {
+                    delete answers[key];
+                }
+                
+                result.classList.remove('active');
+                
+                questions.forEach(q => q.classList.remove('active'));
+                questions[0].classList.add('active');
+                currentQuestion = 0;
+            });
+            
+            function showMatcherResult() {
+                let bestMatch;
+                
+                // Enhanced matching algorithm based on answers
+                if (answers.question1 === 'collision') {
+                    // Collision repair - recommend collision specialists
+                    bestMatch = autoRepairData.find(shop => shop.id === 'steves-auto-body') ||
+                               autoRepairData.find(shop => shop.id === 'schaefer-autobody') ||
+                               autoRepairData.find(shop => shop.type.includes('Collision'));
+                } else if (answers.question1 === 'specialty') {
+                    // Specialty vehicles - recommend specialty shops
+                    bestMatch = autoRepairData.find(shop => shop.id === 'karius-automotive') ||
+                               autoRepairData.find(shop => shop.id === 'distlers-automotive') ||
+                               autoRepairData.find(shop => shop.specialtyVehicles);
+                } else if (answers.question1 === 'emergency') {
+                    // Emergency repair - recommend shops with emergency service
+                    bestMatch = autoRepairData.find(shop => shop.id === 'cletes-inc') ||
+                               autoRepairData.find(shop => shop.emergencyService);
+                } else if (answers.question2 === 'budget') {
+                    // Budget priority - recommend cost-effective options
+                    bestMatch = autoRepairData.find(shop => shop.id === 'dobbs-tire-auto') ||
+                               autoRepairData.find(shop => shop.type.includes('Chain'));
+                } else if (answers.question3 === 'convenience') {
+                    // Convenience priority - recommend shops with amenities
+                    bestMatch = autoRepairData.find(shop => shop.id === 'mission-accomplished-tire-auto') ||
+                               autoRepairData.find(shop => shop.loanerCarService || shop.shuttleService);
+                } else if (answers.question3 === 'warranty') {
+                    // Warranty priority - recommend shops with strong warranties
+                    bestMatch = autoRepairData.find(shop => shop.id === 'mission-accomplished-tire-auto') ||
+                               autoRepairData.find(shop => shop.warranty && shop.warranty.includes('year'));
+                } else {
+                    // Default to premium shop (Bruce's Auto Repair)
+                    bestMatch = autoRepairData.find(shop => shop.isPremium) ||
+                               autoRepairData.find(shop => shop.id === 'bruces-auto-repair');
+                }
+                
+                if (!bestMatch) {
+                    bestMatch = autoRepairData.find(shop => shop.isPremium) ||
+                               autoRepairData[0]; // Fallback to first shop
+                }
+                
+                // Create result content
+                resultContent.innerHTML = '';
+                
+                const resultCard = document.createElement('div');
+                resultCard.className = 'profile-card';
+                if (bestMatch.isPremium) {
+                    resultCard.classList.add('premium-card');
+                }
+                
+                resultCard.innerHTML = `
+                    <div class="profile-header">
+                        <img src="${bestMatch.logo}" alt="${bestMatch.name} logo" class="profile-logo">
+                        <div class="profile-title">
+                            <h3>${bestMatch.name}${bestMatch.isPremium ? '<span class="premium-badge" style="font-size: 0.7rem; padding: 2px 8px; margin-left: 8px;">Trusted Choice</span>' : ''}</h3>
+                            <div class="profile-type">${bestMatch.type}</div>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <p>Based on your preferences, <strong>${bestMatch.name}</strong> is your ideal auto repair match!</p>
+                        <div class="profile-info">
+                            <h4>Why this match:</h4>
+                            <ul>
+                                ${bestMatch.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="profile-info">
+                            <h4>Contact Information:</h4>
+                            <p><strong>Phone:</strong> ${bestMatch.phone}</p>
+                            <p><strong>Address:</strong> ${bestMatch.address}</p>
+                        </div>
+                        <a href="${bestMatch.website}" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Visit ${bestMatch.name}</a>
+                    </div>
+                `;
+                
+                resultContent.appendChild(resultCard);
+            }
+        }
+
+        // Populate FAQ section
+        function populateFAQSection() {
+            const faqList = document.querySelector('.faq-list');
+            if (!faqList || !faqData) {
+                console.warn('⚠️ FAQ container not found');
+                return;
+            }
+            
+            faqList.innerHTML = '';
+            
+            faqData.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.classList.add('faq-item');
+                
+                const faqQuestion = document.createElement('div');
+                faqQuestion.classList.add('faq-question');
+                
+                const faqQuestionText = document.createElement('h3');
+                faqQuestionText.textContent = faq.question;
+                faqQuestion.appendChild(faqQuestionText);
+                
+                const faqToggle = document.createElement('span');
+                faqToggle.classList.add('faq-toggle');
+                faqToggle.textContent = '+';
+                faqQuestion.appendChild(faqToggle);
+                
+                faqItem.appendChild(faqQuestion);
+                
+                const faqAnswer = document.createElement('div');
+                faqAnswer.classList.add('faq-answer');
+                
+                const faqAnswerContent = document.createElement('p');
+                faqAnswerContent.textContent = faq.answer;
+                faqAnswer.appendChild(faqAnswerContent);
+                
+                faqItem.appendChild(faqAnswer);
+                
+                // Add click event
+                faqQuestion.addEventListener('click', function() {
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    faqItem.classList.toggle('active');
+                });
+                
+                faqList.appendChild(faqItem);
+            });
+            
+            console.log('✅ FAQ section populated with', faqData.length, 'questions');
+        }
+    </script>
+</body>
+</html>
