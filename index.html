@@ -901,26 +901,15 @@
             
             <div class="filters">
                 <div class="filter-group">
-                    <label for="type-filter">Shop Type</label>
-                    <select id="type-filter">
-                        <option value="all">All Types</option>
-                        <option value="independent">Independent Shop</option>
-                        <option value="chain">Chain/Franchise</option>
-                        <option value="dealership">Dealership Service</option>
-                        <option value="specialty">Specialty Shop</option>
-                        <option value="collision">Collision Center</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="service-filter">Primary Service</label>
+                    <label for="service-filter">Service Needed</label>
                     <select id="service-filter">
                         <option value="all">All Services</option>
+                        <option value="maintenance">Routine Maintenance</option>
                         <option value="general">General Repair</option>
                         <option value="collision">Collision Repair</option>
                         <option value="tire">Tire Service</option>
-                        <option value="oil">Oil Change</option>
-                        <option value="specialty">Specialty/Classic</option>
+                        <option value="emergency">Emergency/Urgent Repair</option>
+                        <option value="specialty">Specialty/Classic Vehicles</option>
                     </select>
                 </div>
                 
@@ -928,10 +917,23 @@
                     <label for="feature-filter">Special Features</label>
                     <select id="feature-filter">
                         <option value="all">All Features</option>
+                        <option value="budget">Budget-Friendly Options</option>
                         <option value="warranty">Extended Warranty</option>
                         <option value="loaner">Loaner Cars</option>
                         <option value="towing">Towing Service</option>
                         <option value="insurance">Insurance Work</option>
+                        <option value="weekend">Weekend/Extended Hours</option>
+                        <option value="convenience">Full-Service Convenience</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="type-filter">Shop Type</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="independent">Independent Shop</option>
+                        <option value="chain">Chain/Franchise</option>
+                        <option value="dealership">Dealership Service</option>
                     </select>
                 </div>
             </div>
@@ -1132,7 +1134,9 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: false,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "mission-accomplished-tire-auto",
@@ -1173,7 +1177,9 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: true
+            specialtyVehicles: true,
+            budgetFriendly: false,
+            fullServiceConvenience: true
           },
           {
             id: "cletes-inc",
@@ -1216,7 +1222,9 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: true
           },
           {
             id: "full-circle-auto-service",
@@ -1255,12 +1263,14 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: true,
+            fullServiceConvenience: false
           },
           {
             id: "karius-automotive",
             name: "Karius Automotive LLC",
-            type: "Specialty Shop",
+            type: "Independent Shop",
             specialties: ["European/Import Specialist", "BMW Service", "Mercedes Service", "Audi Service"],
             rating: 4.8,
             reviews: 42,
@@ -1294,7 +1304,9 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: false,
-            specialtyVehicles: true
+            specialtyVehicles: true,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "christian-brothers-automotive",
@@ -1333,12 +1345,14 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "schaefer-autobody",
             name: "Schaefer Autobody Centers",
-            type: "Collision Center",
+            type: "Independent Shop",
             specialties: ["Collision Repair", "Auto Body Repair", "Paint Repair", "Frame Repair"],
             rating: 4.8,
             reviews: 150,
@@ -1374,12 +1388,14 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: true
           },
           {
             id: "caliber-collision",
             name: "Caliber Collision",
-            type: "Collision Center",
+            type: "Chain/Franchise",
             specialties: ["Collision Repair", "Auto Body Paint", "Paintless Dent Repair", "Glass Repair"],
             rating: 4.7,
             reviews: 394,
@@ -1415,12 +1431,14 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "steves-auto-body",
             name: "Steve's Auto Body, Inc.",
-            type: "Collision Center",
+            type: "Independent Shop",
             specialties: ["Collision Repair", "Tesla Approved Service", "Computerized Paint Matching", "Paintless Dent Removal"],
             rating: 4.9,
             reviews: 100,
@@ -1456,12 +1474,14 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: true,
-            specialtyVehicles: true
+            specialtyVehicles: true,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "thorpes-body-corvette",
             name: "Thorpe's Body & Corvette Shop",
-            type: "Specialty Shop",
+            type: "Independent Shop",
             specialties: ["Classic Car Restoration", "Corvette Specialist", "Muscle Car Restoration", "High-End Restoration"],
             rating: 4.8,
             reviews: 35,
@@ -1496,7 +1516,9 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: false,
-            specialtyVehicles: true
+            specialtyVehicles: true,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "dobbs-tire-auto",
@@ -1536,7 +1558,9 @@
             weekendHours: true,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: true,
+            fullServiceConvenience: false
           },
           {
             id: "meineke-car-care",
@@ -1575,7 +1599,9 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: true,
+            fullServiceConvenience: false
           },
           {
             id: "firestone-complete-auto",
@@ -1614,7 +1640,9 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: true,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: true,
+            fullServiceConvenience: false
           },
           {
             id: "jack-schmitt-chevrolet",
@@ -1657,7 +1685,9 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: false,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: true
           },
           {
             id: "serra-honda-ofallon",
@@ -1697,12 +1727,14 @@
             weekendHours: false,
             onlineBooking: true,
             insuranceWork: false,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "distlers-automotive",
             name: "Distler's Automotive Repair, Inc.",
-            type: "Specialty Shop",
+            type: "Independent Shop",
             specialties: ["European/Import Specialist", "Mercedes Service", "BMW Service", "Audi Service"],
             rating: 4.8,
             reviews: 65,
@@ -1737,12 +1769,14 @@
             weekendHours: false,
             onlineBooking: false,
             insuranceWork: false,
-            specialtyVehicles: true
+            specialtyVehicles: true,
+            budgetFriendly: false,
+            fullServiceConvenience: false
           },
           {
             id: "scott-afb-auto-hobby",
             name: "Scott AFB Auto Hobby Shop",
-            type: "Specialty Shop",
+            type: "Independent Shop",
             specialties: ["DIY Auto Repair", "Military Service", "Self-Service Bays", "Tool Rental"],
             rating: 4.5,
             reviews: 25,
@@ -1777,7 +1811,9 @@
             weekendHours: true,
             onlineBooking: false,
             insuranceWork: false,
-            specialtyVehicles: false
+            specialtyVehicles: false,
+            budgetFriendly: true,
+            fullServiceConvenience: false
           }
         ];
 
@@ -2267,26 +2303,93 @@
             });
         }
 
-        // Setup filter functionality
+        // Setup filter functionality with new filter order and logic
         function setupFilters() {
-            const typeFilter = document.getElementById('type-filter');
             const serviceFilter = document.getElementById('service-filter');
             const featureFilter = document.getElementById('feature-filter');
+            const typeFilter = document.getElementById('type-filter');
             
-            if (!typeFilter || !serviceFilter || !featureFilter) {
+            if (!serviceFilter || !featureFilter || !typeFilter) {
                 console.warn('⚠️ Filter elements not found');
                 return;
             }
             
             const applyFilters = () => {
-                const typeValue = typeFilter.value;
                 const serviceValue = serviceFilter.value;
                 const featureValue = featureFilter.value;
+                const typeValue = typeFilter.value;
                 
-                console.log('🔍 Applying filters:', { typeValue, serviceValue, featureValue });
+                console.log('🔍 Applying filters:', { serviceValue, featureValue, typeValue });
                 
                 const filteredShops = autoRepairData.filter(shop => {
-                    // Type filter
+                    // Service filter (now first)
+                    if (serviceValue !== 'all') {
+                        const shopServices = shop.services.map(s => s.toLowerCase()).join(' ');
+                        const shopSpecialties = shop.specialties.map(s => s.toLowerCase()).join(' ');
+                        const combinedServices = shopServices + ' ' + shopSpecialties;
+                        
+                        let serviceMatch = false;
+                        
+                        switch(serviceValue) {
+                            case 'maintenance':
+                                serviceMatch = combinedServices.includes('oil') || combinedServices.includes('brake') || combinedServices.includes('maintenance');
+                                break;
+                            case 'general':
+                                serviceMatch = combinedServices.includes('general') || combinedServices.includes('engine') || combinedServices.includes('transmission');
+                                break;
+                            case 'collision':
+                                serviceMatch = combinedServices.includes('collision') || combinedServices.includes('body') || combinedServices.includes('paint');
+                                break;
+                            case 'tire':
+                                serviceMatch = combinedServices.includes('tire');
+                                break;
+                            case 'emergency':
+                                serviceMatch = shop.emergencyService || combinedServices.includes('emergency') || combinedServices.includes('towing');
+                                break;
+                            case 'specialty':
+                                serviceMatch = combinedServices.includes('specialty') || combinedServices.includes('european') || combinedServices.includes('classic') || combinedServices.includes('corvette') || combinedServices.includes('tesla');
+                                break;
+                            default:
+                                serviceMatch = combinedServices.includes(serviceValue);
+                        }
+                        
+                        if (!serviceMatch) return false;
+                    }
+                    
+                    // Feature filter (now second)
+                    if (featureValue !== 'all') {
+                        let featureMatch = false;
+                        
+                        switch(featureValue) {
+                            case 'budget':
+                                featureMatch = shop.budgetFriendly;
+                                break;
+                            case 'warranty':
+                                featureMatch = shop.warranty && (shop.warranty.includes('year') || shop.warranty.includes('Lifetime'));
+                                break;
+                            case 'loaner':
+                                featureMatch = shop.loanerCarService;
+                                break;
+                            case 'towing':
+                                featureMatch = shop.towingService;
+                                break;
+                            case 'insurance':
+                                featureMatch = shop.insuranceWork;
+                                break;
+                            case 'weekend':
+                                featureMatch = shop.weekendHours;
+                                break;
+                            case 'convenience':
+                                featureMatch = shop.fullServiceConvenience;
+                                break;
+                            default:
+                                featureMatch = true;
+                        }
+                        
+                        if (!featureMatch) return false;
+                    }
+                    
+                    // Type filter (now third)
                     if (typeValue !== 'all') {
                         const shopTypeLower = shop.type.toLowerCase();
                         let typeMatch = false;
@@ -2301,56 +2404,11 @@
                             case 'dealership':
                                 typeMatch = shopTypeLower.includes('dealership');
                                 break;
-                            case 'specialty':
-                                typeMatch = shopTypeLower.includes('specialty');
-                                break;
-                            case 'collision':
-                                typeMatch = shopTypeLower.includes('collision');
-                                break;
                             default:
                                 typeMatch = shopTypeLower.includes(typeValue);
                         }
                         
                         if (!typeMatch) return false;
-                    }
-                    
-                    // Service filter
-                    if (serviceValue !== 'all') {
-                        const shopServices = shop.services.map(s => s.toLowerCase()).join(' ');
-                        const shopSpecialties = shop.specialties.map(s => s.toLowerCase()).join(' ');
-                        const combinedServices = shopServices + ' ' + shopSpecialties;
-                        
-                        let serviceMatch = false;
-                        
-                        switch(serviceValue) {
-                            case 'general':
-                                serviceMatch = combinedServices.includes('general');
-                                break;
-                            case 'collision':
-                                serviceMatch = combinedServices.includes('collision') || combinedServices.includes('body');
-                                break;
-                            case 'tire':
-                                serviceMatch = combinedServices.includes('tire');
-                                break;
-                            case 'oil':
-                                serviceMatch = combinedServices.includes('oil');
-                                break;
-                            case 'specialty':
-                                serviceMatch = combinedServices.includes('specialty') || combinedServices.includes('european') || combinedServices.includes('classic');
-                                break;
-                            default:
-                                serviceMatch = combinedServices.includes(serviceValue);
-                        }
-                        
-                        if (!serviceMatch) return false;
-                    }
-                    
-                    // Feature filter
-                    if (featureValue !== 'all') {
-                        if (featureValue === 'warranty' && !shop.warranty.includes('year')) return false;
-                        if (featureValue === 'loaner' && !shop.loanerCarService) return false;
-                        if (featureValue === 'towing' && !shop.towingService) return false;
-                        if (featureValue === 'insurance' && !shop.insuranceWork) return false;
                     }
                     
                     return true;
@@ -2362,9 +2420,9 @@
                 updateTableWithFilteredData(filteredShops);
             };
             
-            typeFilter.addEventListener('change', applyFilters);
             serviceFilter.addEventListener('change', applyFilters);
             featureFilter.addEventListener('change', applyFilters);
+            typeFilter.addEventListener('change', applyFilters);
         }
 
         // Update table with filtered data
@@ -2537,7 +2595,7 @@
                 } else if (answers.question2 === 'budget') {
                     // Budget priority - recommend cost-effective options
                     bestMatch = autoRepairData.find(shop => shop.id === 'dobbs-tire-auto') ||
-                               autoRepairData.find(shop => shop.type.includes('Chain'));
+                               autoRepairData.find(shop => shop.budgetFriendly);
                 } else if (answers.question3 === 'convenience') {
                     // Convenience priority - recommend shops with amenities
                     bestMatch = autoRepairData.find(shop => shop.id === 'mission-accomplished-tire-auto') ||
